@@ -11,8 +11,8 @@ using ReclutamientoGuillermoNassi.Models;
 namespace ReclutamientoGuillermoNassi.Migrations
 {
     [DbContext(typeof(HumanidadContext))]
-    [Migration("20220929202713_InitDB")]
-    partial class InitDB
+    [Migration("20220930203528_InitDb")]
+    partial class InitDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,16 +35,21 @@ namespace ReclutamientoGuillermoNassi.Migrations
                     b.Property<decimal>("Altura")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("Edad")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Peso")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Sexo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
 

@@ -5,7 +5,7 @@
 namespace ReclutamientoGuillermoNassi.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDB : Migration
+    public partial class InitDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,8 +16,8 @@ namespace ReclutamientoGuillermoNassi.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Sexo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Sexo = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Edad = table.Column<int>(type: "int", nullable: false),
                     Altura = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Peso = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
