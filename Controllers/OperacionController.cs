@@ -30,9 +30,25 @@ namespace ReclutamientoGuillermoNassi.Controllers
             
         }
         [HttpGet]
-        public IActionResult OperacionGet()
+        public IActionResult OperacionGet([FromHeader] int A, [FromHeader] int B, [FromHeader] string Operacion) 
         {
-            return Ok();
+            try
+            {
+                OperacionRequest operacionRequest = new()
+                {
+                    A = A,
+                    B = B,
+                    Operacion = Operacion
+                };
+                OperacionResponse operacionResponse = _operacionService.Operacion(operacionRequest);
+                return Ok(operacionResponse);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Valores no válidos");
+            }
+
+           
         }
     }
 }

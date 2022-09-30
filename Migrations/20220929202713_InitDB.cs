@@ -18,6 +18,7 @@ namespace ReclutamientoGuillermoNassi.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Sexo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Edad = table.Column<int>(type: "int", nullable: false),
                     Altura = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Peso = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },

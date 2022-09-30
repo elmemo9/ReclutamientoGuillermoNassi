@@ -1,4 +1,5 @@
-﻿using ReclutamientoGuillermoNassi.Models;
+﻿using Moq;
+using ReclutamientoGuillermoNassi.Models;
 using ReclutamientoGuillermoNassi.Responses;
 
 namespace ReclutamientoGuillermoNassi.Services
@@ -13,11 +14,11 @@ namespace ReclutamientoGuillermoNassi.Services
         public HumanoResponse Get()
         {
             HumanoResponse humanoResponse = new();
-            humanoResponse.Humanos = GetHumanos();
+            humanoResponse.Humanos = GetHumanosMock();
             return humanoResponse;
         }
 
-        private List<Humano> GetHumanos() => new List<Humano>()
+        private static List<Humano> GetHumanosMock() => new ()
         {
             new Humano()
             {

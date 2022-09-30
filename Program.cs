@@ -12,9 +12,11 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IHumanoMockService, HumanoMockService>();
 builder.Services.AddScoped<IOperacionService, OperacionService>();
 builder.Services.AddScoped<IHumanoService, HumanoService>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 builder.Services.AddDbContext<HumanidadContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))

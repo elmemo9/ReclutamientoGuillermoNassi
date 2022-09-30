@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReclutamientoGuillermoNassi.Models;
 
@@ -10,9 +11,11 @@ using ReclutamientoGuillermoNassi.Models;
 namespace ReclutamientoGuillermoNassi.Migrations
 {
     [DbContext(typeof(HumanidadContext))]
-    partial class HumanidadContextModelSnapshot : ModelSnapshot
+    [Migration("20220930183941_InitDb2")]
+    partial class InitDb2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
